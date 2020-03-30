@@ -61,5 +61,7 @@ class CustomObtainAuthToken(ObtainAuthToken):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/auth/', CustomObtainAuthToken.as_view()),
+    path('api/', include('pagamentos.urls')),
+    path('api/auth', CustomObtainAuthToken.as_view()),
+    path('api/', include('users.urls')),
 ]
